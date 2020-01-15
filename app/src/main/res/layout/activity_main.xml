@@ -6,6 +6,10 @@
     android:padding="16dp"
     tools:context="com.example.scorekeeper.MainActivity">
 
+    <!-- TODO: Create a ShapeDrawable button_background.xml  shape:oval, stroke: 2dp,color: colorPrimary and add as background to all buttons.
+         TODO: extract dimension resource name: button_size 70dp and apply for all buttons
+    -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
