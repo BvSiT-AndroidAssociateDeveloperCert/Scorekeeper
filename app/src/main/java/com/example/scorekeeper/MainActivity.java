@@ -37,10 +37,19 @@ public class MainActivity extends AppCompatActivity {
             mScoreText2.setText(String.valueOf(mScoreTeam2));
         }
 
+/*
         findViewById(R.id.increaseTeam1).setOnClickListener(this::increaseScore);
         findViewById(R.id.decreaseTeam1).setOnClickListener(this::decreaseScore);
         findViewById(R.id.increaseTeam2).setOnClickListener(this::increaseScore);
         findViewById(R.id.decreaseTeam2).setOnClickListener(this::decreaseScore);
+*/
+        findViewById(R.id.increaseTeam1).setOnClickListener(this::updateScore);
+        findViewById(R.id.decreaseTeam1).setOnClickListener(this::updateScore);
+        findViewById(R.id.increaseTeam2).setOnClickListener(this::updateScore);
+        findViewById(R.id.decreaseTeam2).setOnClickListener(this::updateScore);
+
+        //Or: findViewById(R.id.decreaseTeam2).setOnClickListener(view -> updateScore(view));
+
     }
 
 
@@ -110,6 +119,46 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    void updateScore(View view){
+        switch(view.getId()){
+            case R.id.increaseTeam1:
+                mScoreTeam1++;
+                mScoreText1.setText(String.valueOf(mScoreTeam1));
+                break;
+            case R.id.decreaseTeam1:
+                if (mScoreTeam1>0) {
+                    mScoreTeam1--;
+                    mScoreText1.setText(String.valueOf(mScoreTeam1));
+                }
+                break;
+            case R.id.increaseTeam2:
+                mScoreTeam2++;
+                mScoreText2.setText(String.valueOf(mScoreTeam2));
+                break;
+            case R.id.decreaseTeam2:
+                if (mScoreTeam2>0) {
+                    mScoreTeam2--;
+                    mScoreText2.setText(String.valueOf(mScoreTeam2));
+                }
+                break;
+        }
+
+
+
+
+        if (view.getId()==R.id.decreaseTeam1){
+            if (mScoreTeam1>0){
+                mScoreTeam1--;
+                mScoreText1.setText(String.valueOf(mScoreTeam1));
+            }
+        }
+        if (view.getId()==R.id.decreaseTeam2){
+            if (mScoreTeam2>0) {
+                mScoreTeam2--;
+                mScoreText2.setText(String.valueOf(mScoreTeam2));
+            }
+        }
+    }
 
 
 
