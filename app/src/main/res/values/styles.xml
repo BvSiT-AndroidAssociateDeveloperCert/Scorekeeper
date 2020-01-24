@@ -8,9 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<!--
     <style name="ScoreButtons" parent="Widget.AppCompat.Button">
         <item name="android:tint">@color/colorPrimary</item>
         <item name="android:background">@drawable/button_background</item>
+    </style>
+-->
+
+<!-- https://stackoverflow.com/questions/57244979/how-to-make-statelistdrawable-change-background-when-button-is-pressed-in-xml -->
+<!-- https://stackoverflow.com/questions/3024983/how-do-i-change-the-tint-of-an-imagebutton-on-focus-press -->
+
+    <style name="ScoreButtons" parent="Widget.AppCompat.Button">
+        <!-- <item name="android:tint">@color/colorPrimary</item> -->
+        <!-- <item name="android:tint">#00FF00</item> -->
+        <item name="android:tint">@drawable/button_state</item>
+        <item name="android:background">@drawable/button_background_state</item>
     </style>
 
     <style name="PlusButtons" parent="ScoreButtons">
